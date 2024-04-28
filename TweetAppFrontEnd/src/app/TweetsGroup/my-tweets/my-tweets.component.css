@@ -1,0 +1,85 @@
+.tweet{
+    width: 70%;
+    margin: auto;
+}
+
+.card {
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff
+}
+
+.stats {
+    background: #f2f5f8 !important;
+    color: #000 !important
+}
+
+.user-name{
+    color: #990033;
+}
+
+.f-right{
+    float:right;
+}
+
+.box{
+    border: 1px solid #bababa;
+    border-radius: 6px;
+    padding:10px;
+    border-color:#0d0d0e;
+    box-shadow:5px 5px #0c0c0c, -0.5em 0.4em #171718;
+    /* padding-left: 5%; */
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.edit_icon{
+    color: white; 
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.delete_icon{
+    margin-left: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.edit_icon:hover, .delete_icon:hover{
+    cursor: pointer;
+    background-color: #0b0d0f;
+    color:white;
+}
+
+.delete_icon:hover{
+    cursor: pointer;
+    background-color: red;
+    color:white;
+}
+
+.like_btn{
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.like_btn:hover{
+    cursor: pointer;
+    background-color: #0f0f0f;
+    color:white;
+}
+
+.like_txt{
+    color:#0b0b0c;
+}
+
+.likedTweet{
+    cursor: pointer;
+    background-color: #151616;
+    color:white;
+}
+

@@ -1,0 +1,29 @@
+<div class="row container-fluid mt-5 d-flex justify-content-center">
+    <div class = "row box">
+    <div class="col-md-6 card p-3 ">
+        <div class="d-flex justify-content-center">
+          <div class="user-details" style="border:2px solid white">
+            <div class="image "> <img src="assets/woman-icon-avatar-icon.png" class="rounded" width="155"> </div>
+            <div>
+                <h4 class="mb-0 mt-0">{{userData?.firstName |titlecase}} {{userData?.lastName|titlecase}}</h4><span class="user-name">@{{loginId}}</span>
+
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6 card p-3">
+        <br>
+        <div class=""><strong>Let's Tweet</strong></div>
+        <br>
+        <div class="row">
+            <div class="col-md-12"><textarea class="form-control" rows="5" id="tweetText" maxlength="144" [(ngModel)]="tweetData"  ></textarea>
+            </div>
+        </div>
+        <br>
+        <div class="row-md-12">
+            <button class="btn btn-block btn-dark f-right " [disabled]="tweetData.length==0 || tweetData==null || tweetData.trim()==''" (click)="postTweet()">Post</button>
+        </div>
+    </div>
+</div>
+</div>
+

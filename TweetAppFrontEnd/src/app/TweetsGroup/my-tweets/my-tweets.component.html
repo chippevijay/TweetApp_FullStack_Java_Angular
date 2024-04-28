@@ -1,0 +1,58 @@
+<div class="media">
+    <img class="align-self-start mr-3" src="assets/woman-icon-avatar-icon.png" class="rounded" width="155" alt="Generic placeholder image">
+    <div class="media-body">
+      <h2>&nbsp;&nbsp;   {{userData?.firstName |titlecase}} {{userData?.lastName|titlecase}}</h2>
+      <p> &nbsp;&nbsp;   {{userData?.dateOfBirth}}</p>
+      <p> &nbsp;&nbsp;   {{userData?.contactNumber}}</p>
+    </div>
+</div>
+
+
+<div class="row container-fluid mt-3 d-flex justify-content-left tweet">
+    <div class="col-md-12 card p-3" *ngIf="myTweets?.length == 0">
+        <p>No tweets yet.</p>
+    </div>
+    <ng-container *ngIf="myTweets?.length != 0">
+        <div class="col-md-12 card p-3" *ngFor="let tweet of myTweets;let i=index;">
+            <div class="row box">
+                <div class="image col-md-12">
+                    <span class="f-right"><span class="material-icons edit_icon" (click)="openEditTweetModal(tweet)">edit</span><span class="material-icons delete_icon" (click)="deleteTweet(tweet)">clear</span>
+                    </span></div>
+                <div class="ml-3 w-100 col-md-12">
+                    <span class="user-name">@{{tweet?.createdById}}</span>
+                    <small class="f-right mt-2 ">{{tweet.updateDateTime| timeago}}</small><br>
+                    <div class="p-2 mt-2 custom-bg d-flex justify-content-between rounded text-white stats">
+                        <!-- {{tweet?.body}} -->
+                        <span [innerHTML]="tweet?.message|hmColor"></span>
+                        <span><span class="like_txt">{{tweet?.tweetLikesCount}} likes </span><span class="material-icons like_btn" (click)="likeTweet(tweet.tweetId)">thumb_up</span></span>
+                    </div>
+    
+                    <div class="replies mt-2">
+                        <div *ngIf="tweet.tweetReply.length>0" class="p-2 ml-0"
+                            style="border:1px solid #bababa; background-color: #0b0b0c; color: white;">
+                            <strong>Replies</strong>
+                        </div>
+                        <div *ngFor="let reply of tweet.tweetReply">
+                            <span class="ml-0 user-name">@{{reply?.loginId}}</span><small
+                                class="f-right mt-2">{{reply?.creationTime| timeago}}</small><br>
+                            <div class="p-2 mt-2 ml-0 bg-dark d-flex justify-content-between rounded text-white stats">
+                                <span [innerHTML]="reply?.replyMsg|hmColor"></span>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="reply-box mt-3 ml-5" attr.id={{tweet.tweetId}}>
+                        <div class="input-group mb-3" attr.id={{tweet.tweetId}}>
+                            <input type="text" class="form-control mr-3" maxlength="144" #replyData placeholder="Reply">
+                            <!-- <div class="input-group-append" > -->
+                            <button class=" btn btn-dark" (click)="replyTweet(tweet.tweetId,replyData.value)">Reply</button>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <br/>
+        </div>
+    </ng-container>
+</div>

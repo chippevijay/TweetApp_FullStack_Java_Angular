@@ -1,0 +1,9 @@
+{
+  "/": {
+ "target": "http://localhost:8082/",
+ "pathRewrite": {
+   "^/": ""
+ },
+ "secure": false
+ }
+ }

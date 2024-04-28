@@ -1,0 +1,16 @@
+<h1 mat-dialog-title style="background-color: #050505;color: white;" class="pop-title text-center">Edit Tweet</h1>
+<div class="ml-4 mr-4">
+    <div class=""><strong>Edit Tweet</strong></div>
+    <br>
+    <div class="row">
+        <div class="col-md-12"><textarea id="tweetText" maxlength="144"
+                [(ngModel)]="tweetData"></textarea>
+
+        </div>
+        <div class="col">
+            <button class="btn btn-dark f-right"
+                [disabled]="tweetData.length==0 || tweetData==null || tweetData.trim()==''"
+                (click)="editTweet()" mat-dialog-close='true'>Post</button>
+        </div>
+    </div>
+</div>

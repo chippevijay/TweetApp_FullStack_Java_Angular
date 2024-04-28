@@ -1,0 +1,14 @@
+<div class="row container-fluid mt-5 d-flex justify-content-center">
+    <div class="col-sm" *ngFor="let user of allUsers">
+        <div class="d-flex justify-content-center">
+            <div class="user-details" style="border:2px solid #bababa">
+                <div class="image "> <img src="assets/woman-icon-avatar-icon.png" class="rounded" width="155"> </div>
+                <div>
+                    <h5 class="mb-0 mt-0">{{user.firstName |titlecase}} {{user.lastName|titlecase}}</h5><span
+                        class="user-name">@{{user.loginId}}</span><br>
+                        <button class="btn btn-dark mt-2" (click)="openIndividualTweetsModal(user.loginId)">Tweets</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

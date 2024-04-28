@@ -1,0 +1,62 @@
+.pop-title{
+    background-color: #141414;
+    color: white;
+    padding: 10px;
+    height: 50px;
+}
+
+.tweet{
+    width: 80%;
+    margin: auto;
+}
+
+.card {
+    width: 400px;
+    border:1px;
+    border-radius: 10px;
+    background-color: #fff;
+    border-color:#0f0f0f;
+}
+
+.stats {
+    background: #f2f5f8 !important;
+    color: #000 !important
+}
+
+.user-name{
+    /* color:#0570a6; */
+    color: #990033;
+}
+
+.f-right{
+    float:right;
+}
+
+.box{
+    border: 1px solid #bababa;
+    border-radius: 6px;
+    padding:10px;
+    border-color:#1b1c1d;
+    box-shadow:20px 20px #1c1d1d, -1em 0 .4em #0e1011;
+}
+
+.like_btn{
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.like_btn:hover{
+    cursor: pointer;
+    background-color: #08090a;
+    color:white;
+}
+
+.likedTweet{
+    cursor: pointer;
+    background-color: #141516;
+    color:white;
+}
+.like_txt{
+    color:#080857;
+}

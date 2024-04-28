@@ -1,0 +1,41 @@
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/nav-icon.png" width="43" height="30" class="d-inline-block align-top" alt="">
+      Tweet App
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" routerLink='/login' routerLinkActive='active' *ngIf="!loggedIn()">Login |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" routerLink='/register' routerLinkActive='active' *ngIf="!loggedIn()">Register Here</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" routerLink='/my-tweets' routerLinkActive='active' *ngIf="loggedIn()">My Tweets |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" routerLink='/all-tweets' routerLinkActive='active' *ngIf="loggedIn()">All Tweets |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" routerLink='/users' routerLinkActive='active' *ngIf="loggedIn()">All Users</a>
+        </li>
+      </ul>
+      <div *ngIf="loggedIn()" class="" >
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link"  routerLink='/post-tweet' routerLinkActive='active' *ngIf="loggedIn()">New Tweet |</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link"  (click)="resetPassword()" routerLinkActive='active' *ngIf="loggedIn()">Reset Password |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  (click)="logout()" routerLinkActive='active' *ngIf="loggedIn()">Logout</a>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </nav>
